@@ -1,0 +1,37 @@
+{
+	"name": "@fuubi/node-git-http-backend",
+	"version": "0.0.1",
+	"description": "Git HTTP Backend CGI binding for Node.js",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"scripts": {
+		"build": "rimraf dist && tsc",
+		"init-dev-env": "cd dev && sh init-dev-env.sh && cd ..",
+		"dev": "nodemon --exec ts-node dev/server.ts --watch src",
+		"clean": "rimraf dist dev/test.git",
+		"test": "jest --watch",
+		"coverage": "jest --coverage"
+	},
+	"files": [
+		"dist",
+		"index.d.ts"
+	],
+	"keywords": [
+		"git",
+		"node.js",
+		"cgi",
+		"git_http_backend"
+	],
+	"author": "Fabrizio Parrillo",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/jest": "^25.2.1",
+		"@types/node": "^13.13.2",
+		"jest": "^25.4.0",
+		"nodemon": "^2.0.3",
+		"rimraf": "^3.0.2",
+		"ts-jest": "^25.4.0",
+		"ts-node": "^8.9.0",
+		"typescript": "^3.8.3"
+	}
+}
