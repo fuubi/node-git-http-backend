@@ -4,6 +4,15 @@
 	"description": "Git HTTP Backend CGI binding for Node.js",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
+	"publishConfig": { "registry": "https://npm.pkg.github.com/" },
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/fuubi/node-git-http-backend.git"
+	},
+	"bugs": {
+		"url": "https://github.com/fuubi/node-git-http-backend/issues"
+	},
+	"homepage": "https://github.com/fuubi/node-git-http-backend#readme",
 	"scripts": {
 		"build": "rimraf dist && tsc",
 		"init-dev-env": "cd dev && sh init-dev-env.sh && cd ..",
