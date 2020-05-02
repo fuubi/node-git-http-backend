@@ -30,22 +30,24 @@ the minimum set of variables required by the `git-http-backend`.
     - ```typescript
         import * as http          from 'http'
         import {
-        defaultConfig ,
-        requestHandler
+            defaultConfig ,
+            requestHandler
         } from 'node-git-http-backend'
 
         const config = defaultConfig (
-        '/usr/lib/git-core/git-http-backend' ,
-        '/home/alice/cool-stuff.git'
+            '/usr/lib/git-core/git-http-backend' ,
+            '/home/alice/cool-stuff.git'
         )
 
         http.createServer ( requestHandler ( config ) )
-        .listen ( 3333 ,
-                  () => console.log (
-                      `Git backend listening to port 3333.\n` +
-                      'If you ran, "npm run-script init-dev-env".\n' +
-                      'You should be able to clone the test repository with:\n' +
-                      'git clone http://localhost:3333/test.git' ) )
+            .listen ( 3333 ,
+                      () => console.log (
+                          `Git backend listening to port 3333.\n` +
+                          'If you ran, "npm run-script init-dev-env".\n' +
+                          'You should be able to clone the test repository with:\n' +
+                          'git clone http://localhost:3333/test.git' 
+                          ) 
+            )
       ```
     - Usually, it is not desired to let everybody push to a repository 😈. Therefore you have to implement
       some middleware logic that makes sure only authenticated users are allowed to pull
